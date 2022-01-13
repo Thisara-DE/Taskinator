@@ -1,8 +1,11 @@
 //El for DOM element
-var buttonEl = document.querySelector("#save-task");
+var formEl = document.querySelector("#task-form");
 var tasksToDoEl = document.querySelector("#tasks-to-do"); 
 
-var createTaskHandler = function() {
+var createTaskHandler = function(event) {
+
+    event.preventDefault();
+    
     // Create a new task item
     var listItemEL = document.createElement("li");
 
@@ -16,5 +19,5 @@ var createTaskHandler = function() {
     tasksToDoEl.appendChild(listItemEL);
 };
 
-buttonEl.addEventListener("click", createTaskHandler);
+formEl.addEventListener("submit", createTaskHandler);
 
